@@ -1,0 +1,17 @@
+</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <h2 class="sub-header">Mismatch List</h2>
+        <div class="table-responsive" id="mismatch-list">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Scenario</th>
+                <th>Screenshot</th>
+                <th>Match Comparison Result</th>
+              </tr>
+            </thead>
+            <tbody>

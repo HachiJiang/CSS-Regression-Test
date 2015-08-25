@@ -1,0 +1,16 @@
+.carousel .carousel-inner img {
+	margin-top: 5px;
+	border: 1px red solid;
+}
+.carousel .carousel-inner img:first-child {
+	margin-top: 20px;
+	border: 1px red solid;
+}
+
+#mismatch-preview .modal-dialog{
+	width: 60%;
+}
+
+table th, table td {
+	text-align: center;
+}

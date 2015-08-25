@@ -1,0 +1,19 @@
+</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Image preview -->
+  <div class="modal" id="mismatch-preview">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">scenario - screenshot</h4>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div id="carousel-example-generic" class="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">

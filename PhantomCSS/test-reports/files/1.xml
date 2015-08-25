@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Report</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nv.d3.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Test Report</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li>
+            <a href=""></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Dashboard</h1>
+        <div class="row placeholders">
+          <div class="col-xs-6 col-sm-3">
+            <svg id="testpiechart" class="mypiechart"></svg>
+          </div>
+          <div class="col-xs-8 col-sm-4 placeholder">
+            <div class="table-responsive">
+              <table id="testdata" class="table table-bordered table-stripped">
+                <thead>
+                  <tr>
+                    <th>Total</th>
+                    <th>Pass</th>
+                    <th>Fail</th>
+                    <th>No Baseline</th>
+                  </tr>
+                </thead>
+                <tbody>
