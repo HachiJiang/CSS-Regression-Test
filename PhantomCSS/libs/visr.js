@@ -164,7 +164,7 @@ function _runDashboard(viz_url) {
       casper.waitWhileVisible(mstrWaitBox,
         function success() {
           vizcount++;
-
+          //casper.wait(config_info.waitBetweenVI);
           console.log(viz_name);
 
           casper.then(function() {
