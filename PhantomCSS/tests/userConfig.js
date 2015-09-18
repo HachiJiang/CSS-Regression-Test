@@ -16,12 +16,12 @@ var config_info = {
     height: 790
   },
   waitTimeout: 60000,
-  //waitBetweenVI: 50 // must > 0
+  //waitTime: 50 // must > 0
 };
 
 var folder_list = [{
-  name: 'VI_Acceptance',
-  id: 'F11CAB7C4B887D887CB5D387D350AD65'
+  name: 'VI_Acceptance', // output folder name
+  id: 'F11CAB7C4B887D887CB5D387D350AD65' // folder id
 }];
 
 var fs = require('fs');

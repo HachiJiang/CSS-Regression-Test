@@ -150,7 +150,7 @@ var vizcount = 0;
 function _runDashboard(viz_url) {
   var data = _parseURL(viz_url);
 
-  casper.thenOpen('http://localhost:8080/MicroStrategy/servlet/mstrWeb', {
+  casper.thenOpen(config_info.webserver, {
       method: "post",
       data: data
     }, function() {
@@ -164,7 +164,7 @@ function _runDashboard(viz_url) {
       casper.waitWhileVisible(mstrWaitBox,
         function success() {
           vizcount++;
-          //casper.wait(config_info.waitBetweenVI);
+
           console.log(viz_name);
 
           casper.then(function() {
@@ -184,6 +184,7 @@ function _runDashboard(viz_url) {
 
                   casper.waitWhileVisible(mstrWaitBox,
                     function success() {
+                      casper.wait(config_info.waitTime);
                       console.log("panel_" + idx);
                       phantomcss.screenshot(panelcontainer + '(' + idx + ')', viz_name + "_panel_" + idx);
                       j++;
