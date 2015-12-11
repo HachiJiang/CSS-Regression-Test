@@ -30,6 +30,7 @@ function staticRendering(config_info, folder_list) {
         var outputRoot = '/' + config_info.testsuite,
             comparisonResultRoot = fs.workingDirectory + '/output' + outputRoot,
             failedComparisonsRoot = fs.workingDirectory + '/failures' + outputRoot,
+            testReportPath = fs.workingDirectory + '/test-reports/index.html',
             i, il;
 
         phantomcss.init({
@@ -72,6 +73,10 @@ function staticRendering(config_info, folder_list) {
             if (fs.exists(failedComparisonsRoot)) {
                 console.log("Deleting related failures folder...");
                 fs.removeTree(failedComparisonsRoot);
+            }
+            if (fs.exists(testReportPath)) {
+            	console.log("Deleting test report file...");
+                fs.remove(testReportPath);
             }
         })
 
@@ -207,7 +212,7 @@ function _runDashboard(viz_url, folderName, waitTime) {
                 });
         },
         function timeout() {
-            phantomcss.screenshot('html', viz_name + "_timeout");
+            phantomcss.screenshot('html', "viz_" + vizcount + "_timeout");
             //casper.test.fail('Should see Viz opened');
         }
     );

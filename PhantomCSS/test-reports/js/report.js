@@ -44,18 +44,28 @@ function _generateDashboards(noOfTests, noOfFails, noOfErrors) {
 function _generateMismatchTable(tests) {
 
     var table = {
-        fail_tr: '',
-        fail_img_div: '',
-        error_tr: '',
-        error_img_div: ''
-    };
+            fail_tr: '',
+            fail_img_div: '',
+            error_tr: '',
+            error_img_div: ''
+        },
+        m = 0,
+        i, il = tests.length,
+        tmp, scenario, screenshot;
 
-    var m = 0;
-
-    for (var i = 0; i < tests.length; i++) {
-        var tmp = tests[i].filename.split('/').pop().split('\\');
-        var scenario = tmp[0] + '/' + tmp[1];
-        var screenshot = '/' + tmp[2].split('.')[0];
+    for (i = 0; i < il; i++) {
+        try {
+            tmp = tests[i].filename.split('/').pop().split('\\');
+            scenario = tmp[0] + '/' + tmp[1];
+            if (tmp[2]) {
+                screenshot = '/' + tmp[2].split('.')[0];
+            }
+        } catch (err) {
+            console.log('filename: ' + tests[i].filename);
+            console.log('scenario: ' + scenario);
+            console.log('screenshot: ' + screenshot);
+            console.log('error: ' + err);
+        }
 
         if (tests[i].fail === true) {
 

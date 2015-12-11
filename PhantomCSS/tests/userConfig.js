@@ -15,7 +15,7 @@ var config_info = {
         width: 1432,
         height: 790
     },
-    waitTimeout: 60000 // if response time > 60000, kill process
+    waitTimeout: 45000 // if response time > 4500, skip process
 };
 
 // config for each folder
@@ -25,8 +25,12 @@ var folder_list = [
       id: 'F11CAB7C4B887D887CB5D387D350AD65' // folder id
     },
     {
-      name: 'VIZ_PreCheckin',
-      id: '2F3C710F460CA8956860129BFC0000C2',
+      name: 'PreCheckin_GM_HM_NV',
+      id: '1CB4E5A34B36FB69DBF7EA9FF951A686',
+    },
+    {
+      name: 'PreCheckin_3rdParty_map_imagelayout',
+      id: '708146F2491EF8AD022F65948E705425',
       waitTime: 60000 // must > 0, if you needn't add extra waiting time after waitbox disappears, just remove this prop
     }
 ];

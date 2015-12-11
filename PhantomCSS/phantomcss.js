@@ -411,8 +411,8 @@ function compareFiles(baseFile, file) {
                 test.failFile = failFile;
                 console.log('Failure! Saved to ' + failFile);
 
-                copyAndReplaceFile(baseFile, baseFile.replace(_src, _failures).replace('.png', '.baseline.png'));
-                copyAndReplaceFile(file, file.replace(_results, _failures));
+                /*copyAndReplaceFile(failFile, failFile.replace(_failures, _src).replace('.png', '.baseline.png'));
+                copyAndReplaceFile(file, file.replace(_failures, _results));*/
               }
 
               casper.evaluate(function() {
