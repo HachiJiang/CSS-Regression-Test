@@ -25,7 +25,7 @@ var login_component = {
 
 exports.staticRendering = staticRendering;
 
-function staticRendering(config_info, folder_list) {
+function staticRendering(config_info, folderObj_list) {
     casper.test.begin('Mojo visual tests - ' + config_info.testsuite, function(test) {
         var outputRoot = '/' + config_info.testsuite,
             comparisonResultRoot = fs.workingDirectory + '/output' + outputRoot,
@@ -45,7 +45,7 @@ function staticRendering(config_info, folder_list) {
 
         casper.on('remote.message', function(msg) {
             this.echo(msg);
-        })
+        });
 
         casper.on('error', function(err) {
             this.die("PhantomJS has errored: " + err);
@@ -78,7 +78,7 @@ function staticRendering(config_info, folder_list) {
             	console.log("Deleting test report file...");
                 fs.remove(testReportPath);
             }
-        })
+        });
 
         casper.then(function() {
             // wait for login container to appear 
@@ -94,12 +94,12 @@ function staticRendering(config_info, folder_list) {
                 function timeout() {
                     casper.test.fail('Should see Login container');
                 }
-            )
+            );
         });
 
         console.log("Start to open test folder one by one...");
-        casper.eachThen(folder_list, function(folderItem) {
-            _srSingleFolder(config_info, folderItem.data);
+        casper.each(folderObj_list, function(self, folderObj) {
+            _srSingleFolder(config_info, folderObj);
         });
 
         casper.then(function now_check_the_screenshots() {
@@ -144,8 +144,8 @@ function _srSingleFolder(config_info, folder) {
     // run dashboards one by one
     casper.then(function() {
         console.log(folder.name + ": Start to run dashboard one by one...");
-        casper.eachThen(VI_links, function(viz_link) {
-            _runDashboard(viz_link.data, folder.name, folder.waitTime);
+        casper.each(VI_links, function(self, viz_link) {
+            _runDashboard(viz_link, folder.name, folder.waitTime);
         });
     });
 }

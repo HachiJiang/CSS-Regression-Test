@@ -6,7 +6,7 @@
 var config_info = {
     iserver: "VMHTML5VI",
     port: "34952",
-    webserver: "http://localhost:8080/MicroStrategy/servlet/mstrWeb",
+    webserver: "http://localhost:8080/MainBranch/servlet/mstrWeb",
     project_name: "MicroStrategy Tutorial",
     username: "administrator",
     password: "",
@@ -19,7 +19,7 @@ var config_info = {
 };
 
 // config for each folder
-var folder_list = [
+var folderObj_list = [
     {
       name: 'VI_Acceptance', // output folder name under testsuite folder
       id: 'F11CAB7C4B887D887CB5D387D350AD65' // folder id
@@ -35,6 +35,7 @@ var folder_list = [
     }
 ];
 
+/* execute scenarios */
 var fs = require('fs'),
     mstrWeb = require('../libs/mstrWeb.js'),
     visr = require('../libs/visr.js'),
@@ -43,8 +44,8 @@ var fs = require('fs'),
 config_info.project_name = config_info.project_name.replace(" ", "+");
 config_info.login_url = mstrWeb.generateLoginURL(config_info);
 
-for (i = 0, il = folder_list.length; i < il; i++) {
-    folder_list[i].url = mstrWeb.generateFolderURL(config_info, folder_list[i].id);
+for (i = 0, il = folderObj_list.length; i < il; i++) {
+    folderObj_list[i].url = mstrWeb.generateFolderURL(config_info, folderObj_list[i].id);
 }
 
-visr.staticRendering(config_info, folder_list);
+visr.staticRendering(config_info, folderObj_list);
