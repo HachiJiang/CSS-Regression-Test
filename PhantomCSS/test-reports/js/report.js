@@ -6,7 +6,15 @@ var fs = require('fs');
 
 exports.generateHTML = generateHTML;
 
-function generateHTML(tests, noOfFails, noOfErrors) {
+/**
+ * Generate html file of output report
+ * @param  {Array} tests      [description]
+ * @param  {Int} noOfFails  [description]
+ * @param  {Int} noOfErrors [description]
+ * @param  {String} path       [description]
+ * @return {[type]}            [description]
+ */
+function generateHTML(tests, noOfFails, noOfErrors, path) {
     // generate dashboards
     var dashboardHTML = _generateDashboards(tests.length, noOfFails, noOfErrors);
 

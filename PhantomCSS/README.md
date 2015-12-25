@@ -1,5 +1,10 @@
 Use PhantomCSS for CSS regression test
 
+#####File Structure
+- libs
+- test-reports
+- tests
+
 #####Steps to Run it:
 1.	Unzip the attachment in you test machine
 2.	Open “/tests/userConfig.js” and change parameters, such as i-server, web server, etc. (PS: currently it only support one folder at one time)

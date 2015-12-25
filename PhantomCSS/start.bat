@@ -1,1 +1,1 @@
-casperjs test tests/userConfig.js
+casperjs test tests/start.js

@@ -5,7 +5,7 @@ http://tldr.huddle.com/blog/css-testing/
 */
 
 var fs = require('fs');
-var report = require('./test-reports/js/report.js');
+var report = require('../test-reports/js/report.js');
 
 var _src = '.' + fs.separator + 'screenshots';
 var _results; // for backwards compatibility results and src are the same - but you can change it!
